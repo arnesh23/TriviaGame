@@ -8,3 +8,36 @@ h1{
 #Timer{
     text-align:center;
 }
+
+#logo {
+    width: 500px;
+    height: 500px;
+    margin: 1em auto 2em auto;
+    display: block;
+}
+
+legend {
+    font-size: 160%;
+    position: relative;
+    left:400px;
+    color: rgb(129, 33, 33);}
+    
+label{  
+    width:200px;       
+    
+     position:relative;
+     left: -20px;
+    
+     display:inline-block;    
+     vertical-align:middle; 
+    }
+
+  #Placeholder{
+      text-align:center;
+  }
+
+  #gif{
+      width:150px;
+      height:150px;
+      margin-left:460px;
+  }

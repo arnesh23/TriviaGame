@@ -12,12 +12,31 @@
 
 <body background = "./assets/images/restaurant_icons.png">
     <!-- <div class="header"> -->
-        <div class=container>
-            <!-- <div class="row center bg-dark mb-4 d-flex p-10 text-black"> -->
-                <h1>Trivial Trivia!!!!</h1>  
-            <div id="time-left"> Timer: </div>
-        </div>
-    </div>
+        <div class="container login">
+            <form id="interests" action="/login" method="post">
+              <div class="one-third column">
+                <img src="./assets/images/trivia.jpeg" alt="logo" id="logo" />
+                <img src="./assets/images/giphy.gif"   alt="gif"  id="gif" />
+              </div>
+              <div class="two-thirds column" id="main">
+                <fieldset>
+                  <legend id = "Question"> </legend>
+                  <label><input type="radio" value="all" id="Allbox">All</label>
+                  <p id ="All"> All </p> 
+                  <label><input type="radio" name="genre" id="Ans0box" value="Answer1"> A</label>
+                  <p id="Answ0"> Answer1 </p>
+                  <label><input type="radio" name="genre" id="Ans1box" value="Answer2"> B</label>
+                  <p id="Answ1"> Answer2 </p>
+                  <label><input type="radio" name="genre" id="Ans2box" value="Answer3"> C</label>
+                  <p id="Answ2"> Answer3 </p>
+                  <label><input type="radio" name="genre" id="Ans3box" value="Answer4"> D</label>
+                  <p id="Answ3"> Answer4 </p>
+                </fieldset>    
+              </div><!-- .two-thirds -->
+            </form>
+          </div><!-- .container -->
+          <div id = "PlaceHolder"></div>
+          <div id = "scorePlaceHolder"></div>
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

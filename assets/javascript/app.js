@@ -1,38 +1,77 @@
-//setTimeout(tenSeconds, 1000 * 1);
+
+var i = -1;
+var correct = 0;
+//Questions
+var question = ["What is the capital of America?",
+                "What is the capital of Russia?",
+                "What is the capital of Mexico?",
+                "What is the capital of India?",
+                "What is the capital of Nepal?",
+                "What is the capital of Australia?",
+                "What is the capital of New Zealand?",
+                "What is the capital of Spain?",
+                "What is the capital of Portugal?",
+                "What is the capital of China?"
+                ]
+//Answers
+var answers = [
+            ["DC", "Mexico City", "Ottowa", "Kathmandu"],
+            ["Latvia", "Beijing", "Seoul", "Moscow"],
+            ["Madrid", "Mexico City", "Brasilia", "Guatemala City"],
+            ["Kabul", "Kathmandu", "Karachi", "New Delhi"],
+            ["Munich", "London", "Tel-Aviv", "Kathmandu"],
+            ["Sydney", "Melbourne", "Perth", "Phucket"],
+            ["Wellington", "London", "Tel-Aviv", "Kathmandu"],
+            ["Rome", "Oslo", "Madrid", "Melbourne"],
+            ["Munich", "Lisbon", "Tel-Aviv", "Kathmandu"],
+            ["Tokyo", "Shanghai", "Beijing", "Seoul"]
+          ]
+ //CorrectAns         
+var correctAns = ["Ans0box", "Ans3box", "Ans1box", "Ans3box", "Ans3box", "Ans0box", "Ans0box", "Ans2box",
+                  "Ans1box", "Ans2box"]
+    
 
 
+//Run the questions 10 times
+setInterval(tenSeconds, 1000*10,10);
+    
+    
+    
+function tenSeconds(){
+    
 
-setTimeout(tenSeconds, 1000 * 1);
-setTimeout(tenSeconds, 1000 * 5);
-
-
-function tenSeconds() {
-    // in the element with an id of time-left add an h2 saying About 10 Seconds Left!
-    // console log 10 seconds left
-
-    $("#time-left").append("<h2>About 1 Seconds Left!</h2>");
-    console.log("1 seconds left");
-  }
-  
-  /*var QandA = [
-      {"Which of the following vegetables is not one of the ingredients of V-8 juice?": 
-      "A. Beet", "B. Carrot", "C. Spinach", "D. Cabbage"},
-      {"What is the main ingredient in vichyssoise?": 
-        "A. lima beans", "B. clams", "C. tomatoes", "D. potatoes"}
-      {"What country produces the most potatoes?": 
-        "A. China","B. United States", "C. Ireland", "D. Russia"},
-      {"What soft-drink company introduced the brand Slice?": 
-        "A. Dr. Pepper", "B. Coca Cola", "C. Seven Up", "D. Pepsico"},
-      {"According to a 1980s Beverage Media poll of four hundred bartenders, what is the average male customers favorite drink?":
-       "A. Beer", "B. Bourbon", "C. Scotch", "D. vodka"},
-      {"Simplesse is NutraSweet's fat substitue. What is it made of?":
-        "A. a blend of proteins from egg white and milk","fat molecules altered to be too large to digest", "C. molecules that are the mirror-image of normal fat molecules"},
-      {"Which grade of olive oil is considered the best?"
-        "A. extra virgin", "B. pure virgin", "C. superfine virgin"},
-      {"What vegetable has varities known as Bell Tower, Orobelle, and Jupiter?"},
-      "A. Onion", "B. Pepper", "C. Squash"
-      {"In the drink called zombie, what is the main alcoholic ingredient?"},
-      "A. Beer", "B. Brandy", "C. Rum", "D. Whiskey"}
+    var j = 0;
+    i++;
+    //clear buttons everytime new question pops up
+    $('input[type=radio]').prop('checked',false)
       
+   // console.log(i);
+   // console.log(question[i]);
 
-  ]*/
+   //Display Question
+    $("#Question").html(question[i]);
+
+    //Display the Questions
+    for(var j = 0; j < 4; j++){
+      console.log("J:"+j);
+        $("#"+"Answ"+j).html(answers[i][j]);
+        console.log(answers[i][j]);
+    };
+
+    //Display correct or incorrect answer to the screen
+    $("input").click(function() {
+      console.log("click");
+      console.log($(this).attr("id"));
+
+      console.log(i);
+      if($(this).attr("id") === correctAns[i]){
+        $("#PlaceHolder").html("<h1>Correct!!</h1>");
+        console.log("Correct!!!")
+      }
+      else
+      $("#PlaceHolder").html("<h1>Incorrect!!</h2>");
+
+    });
+    $("#scorePlaceHolder").text(correct);
+  };
+ 
