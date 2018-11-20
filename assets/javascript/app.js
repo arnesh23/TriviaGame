@@ -27,20 +27,16 @@ var answers = [
             ["Tokyo", "Shanghai", "Beijing", "Seoul"]
           ]
  //CorrectAns         
-var correctAns = ["Ans0box", "Ans3box", "Ans1box", "Ans3box", "Ans3box", "Ans0box", "Ans0box", "Ans2box",
-                  "Ans1box", "Ans2box"]
-    
-
-
+var correctAns = ["Ans0box", "Ans3box", "Ans1box", "Ans3box", "Ans3box", "Ans0box", "Ans0box", "Ans2box", "Ans1box", "Ans2box"]
+  
 //Run the questions 10 times
 setInterval(tenSeconds, 1000*10,10);
     
     
-    
 function tenSeconds(){
-    
 
     var j = 0;
+    console.log("IIIIII:"+i);
     i++;
     //clear buttons everytime new question pops up
     $('input[type=radio]').prop('checked',false)
@@ -59,19 +55,21 @@ function tenSeconds(){
     };
 
     //Display correct or incorrect answer to the screen
-    $("input").click(function() {
+    $("input").unbind().click(function() {
       console.log("click");
       console.log($(this).attr("id"));
 
       console.log(i);
       if($(this).attr("id") === correctAns[i]){
         $("#PlaceHolder").html("<h1>Correct!!</h1>");
+        correct++;
+        console.log(correct);
         console.log("Correct!!!")
       }
       else
       $("#PlaceHolder").html("<h1>Incorrect!!</h2>");
-
+      $("#scorePlaceHolder").text("Score:"+correct);
     });
-    $("#scorePlaceHolder").text(correct);
+    
   };
  

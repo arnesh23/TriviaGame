@@ -41,3 +41,10 @@ label{
       height:150px;
       margin-left:460px;
   }
+
+  #scorePlaceHolder{
+
+      text-align:center;
+      background-color:rgb(22, 105, 97);
+      
+  }
